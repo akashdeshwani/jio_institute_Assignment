@@ -148,7 +148,9 @@ def zero_mean_cross_correlation(f, g):
 
     out = None
     ### YOUR CODE HERE
-    pass
+    # pass
+    g = g - np.mean(g)
+    out = cross_correlation(f, g)
     ### END YOUR CODE
 
     return out
@@ -172,7 +174,10 @@ def normalized_cross_correlation(f, g):
 
     out = None
     ### YOUR CODE HERE
-    pass
+    # pass
+    f = (f - np.mean(f))/np.var(f)
+    g = (g - np.mean(g))/np.var(g)
+    out = cross_correlation(f, g)
     ### END YOUR CODE
 
     return out
